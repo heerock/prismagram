@@ -19,6 +19,7 @@
     "babel-cli": "^6.26.0"
   },
   "scripts": {
+    "deploy": "prisma deploy",
     "dev": "nodemon --exec babel-node src/server.js"
   }
 }
