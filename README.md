@@ -5,7 +5,8 @@ instagram clone with Express + Prisma + React + React Native
 ## User Stories
 
 - [ ] See the feed
-- [ ] Confirm Secret (Login)
+- [x] Request Secret 
+- [x] Confirm Secret (Login)
 - [ ] Like / Unlike a photo
 - [ ] Comment on a photo
 - [ ] Search by user
