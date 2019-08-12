@@ -5,28 +5,25 @@ export default {
         fullName: (parent, __, { request }) => {
             return `${parent.firstName} ${parent.lastName}`
         },
-        amIFollowing: async(parent, _, { request }) => {
+        isFollowing: async(parent, _, { request }) => {
             const { user } = request;
             const { id: parentId } = parent;
             try{
-                const exists = await prisma.$exists.user({
+                return await prisma.$exists.user({
                     AND: [{
-                        id: parentId
+                        id: user.id
                     }, {
-                        followers_some: [user.id]
+                        following_some: {
+                            id: parentId
+                        }
                     }]
                 });
-                if(exists) {
-                    return true;
-                } else {
-                    return false;
-                }
             }catch(error){
                 console.log(error);
                 return false;
             }
         },
-        itsMe: (parent, _, { request }) => {
+        isSelf: (parent, _, { request }) => {
             const { user } = request;
             const { id: parentId } = parent;
             return user.id === parentId; 
