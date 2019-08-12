@@ -16,9 +16,4 @@ export default {
     },
     // 일반 resolver
     // parent는 위에 있는 resolver 즉 user임 나를 call한 resolver
-    User: {
-        fullName: (parent, __, { request }) => {
-            return `${parent.firstName} ${parent.lastName}`
-        }
-    }
 }
