@@ -2,7 +2,8 @@ export const COMMENT_FRAGMENT = `
         id
         text
         user {
-            ${USER_FRAGMENT}
+            id
+            username
         }
 `;
 
@@ -28,7 +29,8 @@ export const FULL_POST_FRAGMENT = `
             ${COMMENT_FRAGMENT} 
         }
         user {
-            ${USER_FRAGMENT}
+            id
+            username
         }
     }
 `;
